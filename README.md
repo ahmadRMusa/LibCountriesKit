@@ -33,7 +33,8 @@ Flag Kit repo: https://github.com/madebybowtie/FlagKit
 
 ##### Add the dependency to your project:
     	dependencies {
-		compile 'com.github.User:Repo:Tag'
+	        compile 'com.github.ahmadRMusa:LibCountriesKit:dev-SNAPSHOT'
+
 	}
 
 
