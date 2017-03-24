@@ -13,8 +13,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- *
- *
  * Created by Ahmad R Musa <bzu.ahmad@gmail.com>.
  */
 
@@ -64,6 +62,7 @@ public class LibCK {
 
     /**
      * This Method Will Apply The passed Context Theme on the returned Drawable
+     *
      * @param context
      * @param countryCode
      * @return
@@ -86,6 +85,7 @@ public class LibCK {
 
     /**
      * This Method Will NOT Apply The passed Context Theme on the returned Drawable
+     *
      * @param context
      * @param countryCode
      * @return
@@ -139,6 +139,24 @@ public class LibCK {
 
 
         return country;
+    }
+
+    public static String getCountryNameByCode(Context context, String countryCode) {
+        if (context == null)
+            throw new IllegalArgumentException("Parameter 'context' can not be null");
+        if (countryCode == null || !availableCountryCodesSet().contains(countryCode))
+            return null;
+
+        Resources res = context.getResources();
+        String cc = countryCode;
+        if (cc.equals("do")) {
+            cc = "_do";
+        }
+
+        int countryNameResourceId = res.getIdentifier(cc, "string", context.getPackageName());
+
+        return context.getString(countryNameResourceId);
+
     }
 
     /**
